@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+  <meta name="theme-color" content="#121212"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <title>Eletrodomésticos Inteligentes para Cozinha | Loja Oficial Saki®</title>
+  <meta name="description" content="Pequenos e inteligentes eletrodomésticos para casa e cozinha da SAKI. Explore purificadores de ar, máquinas de pão e cooktops de indução Saki."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/svg+xml" href="https://cdn.shopify.com/oxygen-v2/42026/37326/78457/3581258/assets/favicon-XsJmdvVn.svg"/>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #121212;
+      --red: #E8352A;
+      --white: #ffffff;
+      --gray-100: #F5F5F5;
+      --gray-200: #E5E5E5;
+      --gray-400: #A0A0A0;
+      --gray-700: #333333;
+      --accent: #F4F0E8;
+      --font: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--white);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+      outline: none;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* -------- PROGRESS BAR -------- */
+    .progress-bar {
+      position: fixed; top: 0; left: 0; z-index: 60;
+      height: 2px; width: 0%; background: var(--red);
+      transition: width 0.3s ease;
+    }
+
+    /* -------- HEADER -------- */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: transparent;
+      padding: 20px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1280px; margin: 0 auto;
+      pointer-events: none;
+    }
+
+    .header-wrapper {
+      position: sticky; top: 0; z-index: 50;
+      background: transparent;
+    }
+
+    nav.main-nav {
+      pointer-events: auto;
+      display: flex; align-items: center;
+      background: var(--gray-700);
+      border: 1px solid rgba(255,255,255,0.05);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .nav-item {
+      position: relative;
+      display: flex; align-items: center;
+      gap: 6px;
+      padding: 11px 18px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    .nav-item:hover { color: #fff; }
+
+    .nav-item svg { transition: transform 0.3s; }
+
+    .nav-item.active { color: #fff; }
+
+    .cart-btn {
+      pointer-events: auto;
+      width: 44px; height: 44px;
+      border-radius: 9999px;
+      background: var(--gray-700);
+      border: 1px solid rgba(255,255,255,0.05);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      transition: background 0.2s;
+    }
+
+    .cart-btn:hover { background: #444; }
+
+    /* -------- HERO -------- */
+    .hero {
+      position: relative;
+      height: 100svh; max-height: 1080px;
+      width: 100%;
+      overflow: hidden;
+      background: #000;
+      margin-top: -84px;
+      margin-bottom: -84px;
+    }
+
+    .hero img.hero-bg {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; z-index: 0;
+    }
+
+    .hero video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; z-index: 1;
+    }
+
+    .hero-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 250px; z-index: 2;
+      background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 100%);
+    }
+
+    .hero-content {
+      position: absolute; bottom: 92px; left: 0; right: 0; z-index: 3;
+    }
+
+    .hero-content .container { }
+
+    .hero-subtitle {
+      display: inline-flex;
+      font-size: 13px; font-weight: 500;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-size: 48px; font-weight: 400;
+      color: #fff; line-height: 1.1;
+      letter-spacing: -0.4px;
+    }
+
+    @media (min-width: 1024px) {
+      .hero-title { font-size: 96px; line-height: 1; letter-spacing: -2px; }
+      .hero-content .container { text-align: center; }
+      .hero-subtitle { justify-content: center; }
+    }
+
+    /* -------- BRAND INTRO -------- */
+    .brand-intro {
+      padding: 80px 0;
+      display: flex; flex-direction: column; gap: 24px;
+    }
+
+    @media (min-width: 1024px) {
+      .brand-intro {
+        align-items: center; text-align: center;
+        padding: 192px 0; gap: 12px;
+      }
+    }
+
+    .badge {
+      display: inline-flex; align-items: center;
+      border: 1px solid rgba(18,18,18,0.1);
+      border-radius: 9999px;
+      padding: 8px 16px;
+      font-size: 11px; font-weight: 500;
+      color: rgba(18,18,18,0.6);
+      width: fit-content;
+    }
+
+    .brand-intro-text {
+      font-size: 22px; font-weight: 400;
+      color: var(--black); line-height: 1.4;
+      letter-spacing: -0.5px; margin-bottom: 40px;
+    }
+
+    @media (min-width: 1024px) {
+      .brand-intro-text { font-size: 40px; max-width: 900px; line-height: 1.3; margin-bottom: 56px; }
+    }
+
+    .brand-intro-text img {
+      display: inline-flex;
+      width: 64px; height: 40px;
+      border-radius: 9999px;
+      object-fit: cover;
+      vertical-align: bottom;
+      margin: 0 4px;
+    }
+
+    @media (min-width: 1024px) {
+      .brand-intro-text img { width: 96px; height: 56px; vertical-align: middle; }
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 8px; border-radius: 9999px; font-weight: 500; font-size: 13px;
+      padding: 14px 26px; height: 48px;
+      transition: box-shadow 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn-black {
+      background: var(--black); color: #fff;
+    }
+
+    .btn-black:hover {
+      box-shadow: 0 0 0 4px rgba(18,18,18,0.2), 0 0 0 8px rgba(18,18,18,0.1);
+    }
+
+    .btn-white {
+      background: #fff; color: var(--black);
+    }
+
+    .btn-white:hover {
+      box-shadow: 0 0 0 4px rgba(255,255,255,0.2), 0 0 0 8px rgba(255,255,255,0.1);
+    }
+
+    .btn-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 24px; height: 24px; font-size: 12px;
+    }
+
+    /* Arrow icon */
+    .arrow-right::after {
+      content: '→';
+      font-size: 14px;
+    }
+
+    /* -------- TEA MAKER SECTION -------- */
+    .tea-section {
+      background: var(--black);
+      padding: 80px 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @media (min-width: 1024px) { .tea-section { padding: 88px 0; } }
+
+    .section-label {
+      display: inline-flex; align-items: center;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 9999px; padding: 8px 16px;
+      font-size: 11px; font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0;
+    }
+
+    .section-label-light {
+      border-color: rgba(18,18,18,0.15);
+      color: rgba(18,18,18,0.6);
+    }
+
+    .tea-title {
+      font-size: 24px; font-weight: 400; color: #fff;
+      letter-spacing: -0.5px;
+      background: linear-gradient(to right, #fff, rgba(255,255,255,0.5), rgba(255,255,255,0.2));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    @media (min-width: 1024px) { .tea-title { font-size: 36px; } }
+
+    .tea-slider {
+      display: flex; gap: 0;
+      overflow-x: auto; scrollbar-width: none;
+      margin: 40px 0 32px;
+      mask-image: linear-gradient(to right, transparent 0, black 128px, black calc(100% - 128px), transparent 100%);
+    }
+    .tea-slider::-webkit-scrollbar { display: none; }
+
+    .tea-slide {
+      flex: 0 0 50%;
+      display: flex; justify-content: center;
+    }
+
+    @media (min-width: 768px) { .tea-slide { flex: 0 0 380px; } }
+    @media (min-width: 1024px) { .tea-slide { flex: 0 0 33.333%; } }
+
+    .tea-slide img {
+      max-height: 460px; width: 100%;
+      object-fit: contain; user-select: none;
+      transition: transform 0.4s, filter 0.4s;
+    }
+
+    .tea-slide:not(.active) img {
+      transform: scale(0.65) translateY(10%);
+      filter: brightness(0.4);
+    }
+
+    .tea-slide.active img {
+      transform: scale(1) translateY(0);
+      filter: none;
+    }
+
+    .tea-info {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 24px; margin-top: 32px;
+    }
+
+    @media (min-width: 1024px) {
+      .tea-info {
+        flex-direction: row; justify-content: space-between; align-items: center;
+        margin-top: 56px;
+      }
+    }
+
+    .tea-caption {
+      font-size: 13px; color: rgba(255,255,255,0.8);
+      text-align: center;
+    }
+
+    @media (min-width: 1024px) { .tea-caption { text-align: left; max-width: 25%; } }
+
+    /* -------- TURKISH COFFEE SECTION -------- */
+    .turkish-section {
+      padding: 80px 0;
+      overflow: hidden;
+    }
+
+    @media (min-width: 1024px) { .turkish-section { padding: 180px 0; } }
+
+    .turkish-grid {
+      display: grid; gap: 48px;
+    }
+
+    @media (min-width: 768px) { .turkish-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+
+    .turkish-img-wrap {
+      position: relative;
+      display: flex;
+    }
+
+    .turkish-glow {
+      position: absolute;
+      left: 100px; top: 56px;
+      width: 450px; height: 550px;
+      background: linear-gradient(180deg, #FF5328 15.9%, rgba(255,144,40,0) 100%);
+      opacity: 0.7;
+      transform: rotate(45deg);
+      filter: blur(110px);
+      z-index: 0;
+    }
+
+    @media (max-width: 767px) {
+      .turkish-glow { left: 100px; top: auto; width: 224px; height: 384px; transform: rotate(-45deg); }
+    }
+
+    .turkish-img-wrap img {
+      position: relative; z-index: 2;
+      height: 346px; object-fit: contain;
+    }
+
+    @media (min-width: 1024px) { .turkish-img-wrap img { height: auto; max-height: 530px; } }
+
+    .turkish-info {
+      padding-top: 0;
+    }
+
+    @media (min-width: 1024px) { .turkish-info { padding-top: 64px; } }
+
+    .turkish-info h3 {
+      font-size: 32px; font-weight: 400; line-height: 1.1;
+      letter-spacing: -1.14px; margin-bottom: 16px;
+    }
+
+    @media (min-width: 1024px) { .turkish-info h3 { font-size: 56px; letter-spacing: -2.6px; } }
+
+    .turkish-info p {
+      font-size: 13px; line-height: 1.5; letter-spacing: -0.14px;
+    }
+
+    .divider-section {
+      padding: 0 110px; margin: 42px auto;
+    }
+
+    .divider { background: var(--gray-200); height: 1px; width: 450px; }
+
+    /* -------- COFFEE TYPES -------- */
+    .coffee-cards-section {
+      overflow: hidden; padding-bottom: 80px;
+    }
+
+    @media (min-width: 1024px) { .coffee-cards-section { padding-bottom: 180px; } }
+
+    .coffee-cards-title {
+      font-size: 32px; font-weight: 400; letter-spacing: -1.14px; margin-bottom: 40px;
+    }
+
+    @media (min-width: 1024px) { .coffee-cards-title { font-size: 48px; letter-spacing: -1.92px; } }
+
+    .coffee-cards-grid {
+      display: flex; gap: 16px;
+      overflow-x: auto; scrollbar-width: none;
+      padding: 0 24px;
+    }
+    .coffee-cards-grid::-webkit-scrollbar { display: none; }
+
+    @media (min-width: 1024px) {
+      .coffee-cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; overflow: visible; padding: 0 110px; }
+    }
+
+    .coffee-card {
+      flex: 0 0 328px; height: 386px;
+      border-radius: 16px; overflow: hidden;
+      background: var(--gray-100);
+      padding: 0 0 16px;
+      position: relative;
+      transition: background 0.3s;
+      display: grid;
+    }
+
+    @media (max-width: 767px) {
+      .coffee-card:first-child { background: var(--red); color: #fff; }
+      .coffee-card:first-child .coffee-card-title,
+      .coffee-card:first-child .coffee-card-desc { color: #fff; }
+    }
+
+    @media (min-width: 1024px) {
+      .coffee-card { flex: none; height: 500px; border-radius: 24px; padding-bottom: 32px; }
+      .coffee-card:hover { background: var(--red); }
+      .coffee-card:hover .coffee-card-title,
+      .coffee-card:hover .coffee-card-desc { color: #fff; }
+      .coffee-card:hover .coffee-card-actions { opacity: 1; }
+    }
+
+    .coffee-card-content { padding: 24px; z-index: 2; }
+    @media (min-width: 1024px) { .coffee-card-content { padding: 40px; } }
+
+    .coffee-card-title { font-size: 20px; font-weight: 400; letter-spacing: -0.5px; transition: color 0.3s; }
+    @media (min-width: 1024px) { .coffee-card-title { font-size: 28px; } }
+
+    .coffee-card-desc { font-size: 13px; margin-top: 8px; line-height: 1.5; transition: color 0.3s; }
+
+    .coffee-card img.product-img {
+      position: absolute; bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      object-fit: contain; width: calc(100% - 80px);
+      z-index: 0;
+    }
+
+    @media (min-width: 1024px) { .coffee-card img.product-img { width: calc(100% - 160px); } }
+
+    .coffee-card-actions {
+      position: absolute; bottom: 16px; left: 16px; z-index: 3;
+      display: flex; align-items: flex-end; gap: 6px;
+      opacity: 1;
+      transition: opacity 0.3s;
+    }
+
+    @media (min-width: 1024px) { .coffee-card-actions { bottom: 32px; left: 32px; opacity: 0; } }
+
+    .btn-sm { height: 36px; padding: 8px 18px; font-size: 11px; }
+    @media (min-width: 1024px) { .btn-sm.lg { height: 44px; padding: 12px 26px; font-size: 13px; } }
+
+    .btn-ghost {
+      background: rgba(48,48,48,0.3);
+      color: #fff;
+    }
+    .btn-ghost:hover { color: rgba(255,255,255,0.6); }
+
+    /* -------- LUNA KETTLE SECTION -------- */
+    .luna-section {
+      background: var(--black);
+      color: #fff;
+      display: flex; flex-direction: column;
+      padding-bottom: 80px;
+    }
+
+    @media (min-width: 1024px) {
+      .luna-section {
+        position: relative;
+        aspect-ratio: 1440/768;
+        justify-content: center;
+        padding-bottom: 0;
+      }
+    }
+
+    .luna-img-wrap {
+      position: relative; margin-bottom: 40px;
+    }
+
+    @media (min-width: 1024px) { .luna-img-wrap { position: static; margin-bottom: 0; } }
+
+    .luna-img-wrap picture img {
+      width: 100%;
+    }
+
+    @media (min-width: 1024px) {
+      .luna-img-wrap picture img {
+        position: absolute; inset: 0;
+        height: 100%; object-fit: cover; object-position: top;
+      }
+    }
+
+    .luna-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 82px;
+      background: linear-gradient(to bottom, transparent, rgba(18,18,18,0.5), #121212);
+    }
+
+    @media (min-width: 1024px) { .luna-overlay { display: none; } }
+
+    .luna-content {
+      position: relative; z-index: 2;
+    }
+
+    @media (min-width: 1024px) { .luna-content { margin-bottom: 32px; max-width: 1060px; margin-left: auto; margin-right: auto; } }
+
+    .luna-content .inner { max-width: 512px; }
+
+    .luna-content h2 {
+      font-size: 36px; font-weight: 400; letter-spacing: -0.5px; margin-bottom: 16px;
+    }
+
+    @media (min-width: 1024px) { .luna-content h2 { font-size: 56px; } }
+
+    .luna-content p {
+      font-size: 13px; opacity: 0.8; margin-bottom: 48px; line-height: 1.5; max-width: 400px;
+    }
+
+    @media (min-width: 1024px) { .luna-content p { font-size: 15px; } }
+
+    /* -------- PRODUCTS CAROUSEL -------- */
+    .products-section { padding: 40px 0 80px; }
+    @media (min-width: 1024px) { .products-section { padding: 80px 0; } }
+
+    .products-section h2 {
+      font-size: 22px; letter-spacing: -0.015em; margin-bottom: 24px;
+    }
+
+    @media (min-width: 1024px) { .products-section h2 { font-size: 36px; letter-spacing: -0.03em; margin-bottom: 40px; } }
+
+    .products-slider {
+      display: flex; gap: 16px;
+      overflow-x: auto; scrollbar-width: none;
+      padding: 0 24px;
+    }
+    .products-slider::-webkit-scrollbar { display: none; }
+
+    @media (min-width: 1024px) { .products-slider { gap: 24px; } }
+
+    .product-card {
+      flex: 0 0 328px; height: 386px;
+      border-radius: 16px; background: var(--gray-100);
+      padding: 24px; select: none;
+      display: flex; flex-direction: column;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    @media (min-width: 1024px) {
+      .product-card { flex: 0 0 400px; height: 484px; border-radius: 24px; padding: 32px; }
+      .product-card:hover { background: linear-gradient(to top, #343434, #5F5F5F); }
+      .product-card:hover .product-card-name { color: #fff; }
+      .product-card:hover .product-card-actions { opacity: 1; visibility: visible; }
+    }
+
+    @media (max-width: 767px) {
+      .product-card:first-child { background: linear-gradient(to top, #343434, #5F5F5F); box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+      .product-card:first-child .product-card-name { color: #fff; }
+      .product-card:first-child .product-card-actions { opacity: 1; visibility: visible; }
+    }
+
+    .product-card-header {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px;
+    }
+
+    .product-card-num {
+      width: 30px; height: 30px; border-radius: 9999px; background: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 500;
+    }
+
+    @media (min-width: 1024px) { .product-card-num { width: 32px; height: 32px; } }
+
+    .product-card-actions {
+      display: flex; gap: 8px;
+      opacity: 1; visibility: visible;
+    }
+
+    @media (min-width: 768px) {
+      .product-card-actions { opacity: 0; visibility: hidden; transition: opacity 0.2s; }
+    }
+
+    .product-card-img-wrap {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .product-card-img-wrap img { max-height: 236px; object-fit: contain; }
+    @media (min-width: 1024px) { .product-card-img-wrap img { max-height: 300px; } }
+
+    .product-card-name {
+      font-size: 17px; font-weight: 400; text-align: center;
+      letter-spacing: -0.015em; transition: color 0.2s;
+    }
+
+    /* -------- FRESH CLUB -------- */
+    .fresh-section {
+      background: var(--accent);
+      padding: 80px 0 64px;
+      overflow: hidden; position: relative;
+    }
+
+    @media (min-width: 1024px) { .fresh-section { padding: 128px 0 112px; } }
+
+    .fresh-inner {
+      display: flex; flex-direction: column; gap: 0;
+    }
+
+    @media (min-width: 1024px) { .fresh-inner { flex-direction: row; } }
+
+    .fresh-text { max-width: 520px; }
+
+    .fresh-text h2 {
+      margin-top: 16px;
+      font-size: 36px; font-weight: 400; line-height: 1.15; letter-spacing: -0.5px;
+      color: var(--black);
+    }
+
+    @media (min-width: 1024px) { .fresh-text h2 { margin-top: 24px; font-size: 56px; line-height: 1.05; letter-spacing: -1px; } }
+
+    .fresh-text h2 span { color: var(--red); }
+
+    .fresh-text p { margin-top: 16px; font-size: 13px; line-height: 1.6; }
+
+    .fresh-img {
+      width: 100%; pointer-events: none; z-index: 0;
+    }
+
+    @media (min-width: 1024px) {
+      .fresh-img { position: absolute; top: 40px; left: 520px; max-width: 810px; }
+    }
+
+    .fresh-cards {
+      display: flex; gap: 16px;
+      overflow-x: auto; scrollbar-width: none;
+      margin-top: -112px; position: relative; z-index: 1;
+    }
+    .fresh-cards::-webkit-scrollbar { display: none; }
+
+    @media (min-width: 1024px) {
+      .fresh-cards {
+        display: grid; grid-template-columns: 1fr 1fr 1fr;
+        gap: 32px; overflow: visible; margin-top: 96px;
+      }
+    }
+
+    .fresh-card {
+      flex: 0 0 320px;
+      background: linear-gradient(to bottom, #fff, var(--gray-100));
+      border-radius: 16px; padding: 24px;
+      display: flex; flex-direction: column; gap: 32px;
+    }
+
+    @media (min-width: 1024px) { .fresh-card { flex: none; gap: 16px; padding: 32px; } }
+
+    .fresh-card-icon {
+      width: 48px; height: 48px; font-size: 32px;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .fresh-card h3 { font-size: 16px; font-weight: 500; color: var(--black); margin-bottom: 8px; }
+    .fresh-card p { font-size: 13px; color: var(--black); line-height: 1.5; }
+
+    /* -------- FOOTER -------- */
+    footer {
+      background: var(--black);
+      padding-bottom: 24px;
+      position: relative; z-index: 10;
+    }
+
+    .footer-top {
+      padding: 80px 0 64px;
+      display: grid; grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 1024px) { .footer-top { padding: 176px 0 42px; grid-template-columns: 1fr 1fr; } }
+
+    .footer-actions {
+      display: flex; flex-direction: column; gap: 16px; margin-bottom: 64px;
+    }
+
+    @media (min-width: 1024px) {
+      .footer-actions { flex-direction: row; justify-content: flex-end; align-items: center; gap: 12px; margin-bottom: 0; order: 1; }
+    }
+
+    .footer-selector {
+      height: 48px; border-radius: 9999px; background: #fff;
+      padding: 0 26px; display: flex; align-items: center; justify-content: space-between;
+      gap: 8px; font-size: 13px; font-weight: 500; color: var(--black);
+      cursor: pointer;
+    }
+
+    .footer-socials {
+      display: flex; gap: 24px; margin-bottom: 64px;
+    }
+
+    @media (min-width: 1024px) { .footer-socials { margin-bottom: 0; } }
+
+    .social-icon {
+      width: 44px; height: 44px; border-radius: 9999px;
+      background: #fff; display: flex; align-items: center; justify-content: center;
+      color: var(--gray-700); font-size: 18px; font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .social-icon:hover { background: var(--gray-200); }
+
+    .footer-links {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap-x: 24px; gap-y: 43px; color: #fff;
+    }
+
+    @media (min-width: 1024px) {
+      .footer-links { grid-template-columns: 1fr 1fr 1fr; gap: 22px; }
+    }
+
+    .footer-col-title { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 28px; }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+
+    .footer-col ul li a {
+      font-size: 13px; color: #fff; letter-spacing: -0.2px;
+      transition: text-decoration 0.2s;
+    }
+
+    .footer-col ul li a:hover { text-decoration: underline; }
+
+    .footer-cards {
+      display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none;
+      margin-bottom: 32px;
+    }
+    .footer-cards::-webkit-scrollbar { display: none; }
+
+    @media (min-width: 1024px) {
+      .footer-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; overflow: visible; gap: 40px; }
+    }
+
+    .footer-card {
+      flex: 0 0 330px; height: 215px; border-radius: 16px; overflow: hidden;
+      position: relative; display: block;
+    }
+
+    @media (min-width: 1024px) { .footer-card { flex: none; height: 260px; border-radius: 24px; } }
+
+    .footer-card img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+    .footer-card-label {
+      position: absolute; bottom: 24px; left: 20px; right: 21px; z-index: 2;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .footer-card-label span { font-size: 17px; font-weight: 500; color: #fff; }
+
+    .footer-card-arrow {
+      width: 21px; height: 21px; border-radius: 9999px;
+      background: rgba(40,40,40,0.2); display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 10px;
+    }
+
+    .footer-logo-wrap {
+      display: flex; justify-content: center; align-items: center;
+      margin-bottom: 24px; overflow: hidden;
+    }
+
+    .footer-logo-wrap img { max-height: 120px; width: 100%; object-fit: contain; }
+
+    .footer-bottom {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 28px; color: #fff; position: relative;
+    }
+
+    @media (min-width: 1024px) {
+      .footer-bottom { position: absolute; bottom: 26px; left: 24px; right: 24px; display: flex; align-items: center; justify-content: space-between; }
+    }
+
+    .footer-bottom-links { display: flex; gap: 16px; col-span: 2; }
+    .footer-bottom-links a { font-size: 11px; color: rgba(255,255,255,0.4); }
+    .footer-bottom-links a:hover { text-decoration: underline; }
+
+    .footer-copyright { font-size: 11px; color: rgba(255,255,255,0.4); }
+
+    .footer-pay { display: flex; gap: 8px; align-items: center; }
+
+    /* -------- MOBILE MENU -------- */
+    .mobile-menu-btn {
+      pointer-events: auto;
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 20px; font-size: 13px; font-weight: 500;
+      color: rgba(255,255,255,0.7); border-radius: 9999px;
+    }
+
+    @media (min-width: 1024px) { .mobile-menu-btn { display: none; } }
+
+    .desktop-nav { display: none; }
+    @media (min-width: 1024px) { .desktop-nav { display: flex; } }
+
+    /* -------- SCROLL ANIMATIONS -------- */
+    .fade-up {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1; transform: translateY(0);
+    }
+
+    /* -------- UTILITY -------- */
+    .text-red { color: var(--red); }
+    .flex { display: flex; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .gap-2 { gap: 8px; }
+    .mt-10 { margin-top: 40px; }
+    .mt-12 { margin-top: 48px; }
+    .w-fit { width: fit-content; }
+
+    .skip-link {
+      position: absolute; top: -40px; left: 0;
+      background: var(--black); color: #fff; padding: 8px;
+      z-index: 100;
+    }
+    .skip-link:focus { top: 0; }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Carregando página"></div>
+
+<!-- HEADER -->
+<div class="header-wrapper">
+  <div style="max-width:1280px;margin:0 auto;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;pointer-events:none;">
+
+    <div style="width:76px;pointer-events:auto;"></div>
+
+    <nav class="main-nav" aria-label="Navegação principal">
+      <!-- Desktop nav -->
+      <div class="desktop-nav" style="align-items:center;">
+        <a href="#produtos" class="nav-item">Produtos</a>
+        <a href="#sobre" class="nav-item">Conheça a Saki</a>
+        <a href="#suporte" class="nav-item">Suporte</a>
+        <a href="#fresh-club" class="nav-item" style="display:flex;align-items:center;gap:6px;">
+          <svg fill="none" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;">
+            <path d="m2.5 10c5.22333 0 7.5-2.1975 7.5-7.5 0 5.3025 2.2608 7.5 7.5 7.5-5.2392 0-7.5 2.2608-7.5 7.5 0-5.2392-2.27667-7.5-7.5-7.5z" fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="1.5"></path>
+          </svg>
+          Fresh Club
+        </a>
+      </div>
+      <!-- Mobile menu button -->
+      <button class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false">
+        Menu
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.29473 11.3495C9.12998 11.5142 8.8629 11.5142 8.69814 11.3495L4.397 7.0483C4.23225 6.88354 4.23225 6.61647 4.397 6.45171L4.59588 6.25281C4.76063 6.08805 5.02774 6.08805 5.1925 6.25281L8.99644 10.0568L12.8004 6.25281C12.9652 6.08805 13.2322 6.08805 13.397 6.25281L13.5959 6.45171C13.7606 6.61647 13.7606 6.88354 13.5959 7.0483L9.29473 11.3495Z" fill="#FFFFFF"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <a class="cart-btn" href="#carrinho" aria-label="Ver carrinho com 0 itens" style="pointer-events:auto;">
+      <svg fill="none" height="15" viewBox="0 0 14 15" width="14" xmlns="http://www.w3.org/2000/svg">
+        <path clip-rule="evenodd" d="m3.58076 3.31351c0-1.78187 1.49133-3.31351 3.41704-3.31351 1.92521 0 3.4184 1.53115 3.4184 3.31351v.38163h.7028c1.0914 0 2.0038.76754 2.1075 1.77145l.7635 7.38881c.1203 1.1502-.859 2.1446-2.1075 2.1446h-9.76493c-1.24852 0-2.227981-.9937-2.1075375-2.144l.7635005-7.38941c.103745-1.0039 1.016177-1.77145 2.107587-1.77145h.69964zm1.57051.38163h3.6944v-.38163c0-1.06523-.87877-1.86191-1.84787-1.86191-.96859 0-1.84653.79619-1.84653 1.86191z" fill="#fff" fill-rule="evenodd"></path>
+      </svg>
+      <span style="position:absolute;font-size:8px;font-weight:600;color:#000;transform:translateY(2px);">0</span>
+    </a>
+
+  </div>
+</div>
+<!-- END HEADER -->
+
+<main id="main-content" tabindex="-1" style="outline:none;">
+
+  <!-- HERO -->
+  <div class="hero">
+    <img
+      src="https://cdn.sakiproducts.com/images/hero-fallback/home.webp"
+      srcset="https://cdn.sakiproducts.com/images/hero-fallback/home-640w.webp 640w, https://cdn.sakiproducts.com/images/hero-fallback/home-1024w.webp 1024w, https://cdn.sakiproducts.com/images/hero-fallback/home.webp 1920w"
+      sizes="100vw"
+      width="1920" height="1080"
+      alt="Aperfeiçoado pela Tecnologia"
+      class="hero-bg"
+      fetchpriority="high"
+    />
+    <video
+      width="1920" height="1080"
+      autoplay muted playsinline loop preload="metadata"
+      poster="https://cdn.sakiproducts.com/images/hero-fallback/home.webp"
+      aria-label="Aperfeiçoado pela Tecnologia"
+    >
+      <source src="https://cdn.sakiproducts.com/videos/home/hero-new-mobile.av1.webm?v=2" type="video/webm" media="(max-width: 767px)"/>
+      <source src="https://cdn.sakiproducts.com/videos/home/hero-new-mobile.mp4?v=2" type="video/mp4" media="(max-width: 767px)"/>
+      <source src="https://cdn.sakiproducts.com/videos/home/hero-new.av1.webm?v=2" type="video/webm"/>
+      <source src="https://cdn.sakiproducts.com/videos/home/hero-new.mp4?v=2" type="video/mp4"/>
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="container">
+        <span class="hero-subtitle">Inspirada pela Tradição</span>
+        <div class="hero-title">
+          Aperfeiçoada<br class="block lg:hidden"/> pela<br class="block lg:hidden"/> Tecnologia
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END HERO -->
+
+  <!-- BRAND INTRO -->
+  <section class="container brand-intro fade-up">
+    <h1 class="badge">Saki Produtos</h1>
+    <div class="brand-intro-text">
+      <p>Na Saki, unimos inovação e tradição para elevar seus rituais de café e chá
+        <img src="https://cdn.sakiproducts.com/images/coffee-maker-1.webp" alt="Máquina de Café Turco Saki" loading="lazy" decoding="async" width="96" height="56"/>
+        criando produtos
+        <img src="https://cdn.sakiproducts.com/images/turkish_coffee_with_background.webp?v=2" alt="Xícara de café turco com espuma" loading="lazy" decoding="async" width="96" height="56"/>
+        para momentos extraordinários.
+        <img src="https://cdn.sakiproducts.com/images/coffee-maker-2.webp" alt="Chaleira Elétrica Saki" loading="lazy" decoding="async" width="96" height="56" style="display:none;" class="hidden-desktop"/>
+      </p>
+    </div>
+    <div style="display:flex;justify-content:flex-start;">
+      <a class="btn btn-black" href="#sobre">
+        Conheça a Saki
+        <span class="arrow-right"></span>
+      </a>
+    </div>
+  </section>
+  <!-- END BRAND INTRO -->
+
+  <!-- TEA MAKER SECTION -->
+  <div class="tea-section" id="produtos">
+    <div class="container" style="display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;">
+      <div class="section-label">Chaleiras de Chá</div>
+      <h2 class="tea-title">Chaleira de Chá Turco Pro</h2>
+    </div>
+
+    <div class="tea-slider" id="tea-slider">
+      <div class="tea-slide active">
+        <img src="https://cdn.sakiproducts.com/images/tea-maker/360/slider/siyah.webp" alt="Preto Fosco" decoding="async" loading="lazy" width="913" height="997"/>
+      </div>
+      <div class="tea-slide">
+        <img src="https://cdn.sakiproducts.com/images/tea-maker/360/slider/beyaz.webp" alt="Branco Pérola" decoding="async" loading="lazy" width="913" height="997"/>
+      </div>
+      <div class="tea-slide">
+        <img src="https://cdn.sakiproducts.com/images/tea-maker/360/slider/yesil.webp" alt="Verde Sálvia" decoding="async" loading="lazy" width="913" height="997"/>
+      </div>
+      <div class="tea-slide">
+        <img src="https://cdn.sakiproducts.com/images/tea-maker/360/slider/mavi.webp" alt="Azul Meia-Noite" decoding="async" loading="lazy" width="913" height="997"/>
+      </div>
+    </div>
+
+    <div class="container tea-info">
+      <div style="display:flex;width:256px;gap:16px;" class="tea-dots">
+        <button class="tea-dot active" data-idx="0" aria-label="Preto Fosco"
+          style="flex:1;height:2px;border-radius:2px;background:rgba(255,255,255,0.8);transition:background 0.2s;"></button>
+        <button class="tea-dot" data-idx="1" aria-label="Branco Pérola"
+          style="flex:1;height:2px;border-radius:2px;background:rgba(255,255,255,0.2);transition:background 0.2s;"></button>
+        <button class="tea-dot" data-idx="2" aria-label="Verde Sálvia"
+          style="flex:1;height:2px;border-radius:2px;background:rgba(255,255,255,0.2);transition:background 0.2s;"></button>
+        <button class="tea-dot" data-idx="3" aria-label="Azul Meia-Noite"
+          style="flex:1;height:2px;border-radius:2px;background:rgba(255,255,255,0.2);transition:background 0.2s;"></button>
+      </div>
+      <p class="tea-caption">Chaleira de Chá Turco Pro na cor Preto Fosco.<br/>Minimalismo marcante encontra engenharia precisa.</p>
+      <a class="btn btn-white" href="#" style="margin-top:8px;">
+        <span>Explorar Chaleira de Chá Pro</span>
+        <span class="arrow-right"></span>
+      </a>
+    </div>
+  </div>
+  <!-- END TEA MAKER -->
+
+  <!-- TURKISH COFFEE SECTION -->
+  <section class="turkish-section container">
+    <div class="turkish-grid fade-up">
+      <div class="turkish-img-wrap">
+        <div class="turkish-glow"></div>
+        <div style="position:relative;">
+          <img src="https://cdn.sakiproducts.com/images/turkish-coffee-maker.webp?v=2"
+            alt="Máquina de Café Turco" width="1000" height="1000"
+            decoding="async" loading="lazy"
+            style="position:relative;z-index:2;height:346px;object-fit:contain;"/>
+        </div>
+      </div>
+      <div class="turkish-info">
+        <div class="badge section-label-light" style="margin-bottom:16px;">Máquina de Café Turco</div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <h3>Saboreie o Autêntico<br/>Café Turco</h3>
+          <p>Experimente a combinação perfeita de tradição e<br/>inovação em cada xícara de café turco.</p>
+        </div>
+        <a class="btn btn-black" href="#" style="margin-top:40px;margin-bottom:24px;display:inline-flex;">
+          <span>Explorar</span>
+          <span class="arrow-right"></span>
+        </a>
+        <div style="position:relative;height:180px;">
+          <img src="https://cdn.sakiproducts.com/images/home/turkish-coffee-maker-small-mobile.webp"
+            alt="Máquina de Café Turco Saki preparando café fresco"
+            style="position:absolute;top:36px;right:80px;height:188px;width:184px;border-radius:17px;border:4px solid #fff;object-fit:cover;"
+            decoding="async" loading="lazy" width="184" height="188"/>
+          <img src="https://cdn.sakiproducts.com/images/home/turkish-coffee-maker-small-2-mobile.webp?1"
+            alt="Xícara de café turco fresquinho com espuma"
+            style="position:absolute;top:0;right:20px;height:96px;width:96px;border-radius:12px;border:2px solid #fff;object-fit:cover;"
+            decoding="async" loading="lazy" width="108" height="108"/>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin:42px 0 46px;padding:0 110px;">
+      <div class="divider" style="max-width:450px;"></div>
+    </div>
+
+    <!-- COFFEE TYPE CARDS -->
+    <div class="coffee-cards-section fade-up" style="padding:0;">
+      <div class="container" style="margin-bottom:40px;">
+        <div style="display:grid;gap:16px;" class="coffee-header-grid">
+          <h3 class="coffee-cards-title">Criado para a Tradição,<br/><span class="text-red">Aperfeiçoado</span> para Você</h3>
+          <p style="font-size:13px;line-height:1.6;max-width:600px;">Explore a riqueza aveludada profunda do Café Turco e a textura macia do Café Dibek moído em pedra. Duas tradições moldadas por séculos, refinadas para hoje.</p>
+        </div>
+      </div>
+
+      <div class="coffee-cards-grid">
+        <!-- Café Turco -->
+        <div class="coffee-card">
+          <div class="coffee-card-content">
+            <h3 class="coffee-card-title">Café Turco</h3>
+            <p class="coffee-card-desc">Intenso, rico e encorpado — nosso Café Turco entrega um sabor atemporal compartilhado por gerações.</p>
+          </div>
+          <img class="product-img" src="https://cdn.sakiproducts.com/images/turkish-coffee.webp" alt="Café Turco" decoding="async" loading="lazy"/>
+          <div class="coffee-card-actions">
+            <a class="btn btn-white btn-sm lg" href="#"><span>Explorar</span><span class="arrow-right"></span></a>
+            <a class="btn btn-ghost btn-sm lg" href="#"><span>Comprar</span></a>
+          </div>
+        </div>
+        <!-- Café Dibek -->
+        <div class="coffee-card">
+          <div class="coffee-card-content">
+            <h3 class="coffee-card-title">Café Dibek</h3>
+            <p class="coffee-card-desc">Nosso café Dibek é suave e aveludado, oferecendo uma opção cremosa e leitosa para o café turco.</p>
+          </div>
+          <img class="product-img" src="https://cdn.sakiproducts.com/images/dibek-coffee.webp" alt="Café Dibek" decoding="async" loading="lazy"/>
+          <div class="coffee-card-actions">
+            <a class="btn btn-white btn-sm lg" href="#"><span>Explorar</span><span class="arrow-right"></span></a>
+            <a class="btn btn-ghost btn-sm lg" href="#"><span>Comprar</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END TURKISH COFFEE -->
+
+  <!-- LUNA KETTLE SECTION -->
+  <section class="luna-section fade-up">
+    <div class="luna-img-wrap">
+      <picture>
+        <source media="(min-width: 1024px)" srcset="https://cdn.sakiproducts.com/images/luna-kettle-home-desktop.webp?v=2"/>
+        <img src="https://cdn.sakiproducts.com/images/luna-kettle-home.webp?v=2" alt="Chaleira Luna" decoding="async" loading="lazy" width="100%" height="100%"/>
+      </picture>
+      <div class="luna-overlay"></div>
+    </div>
+    <div class="luna-content container">
+      <div class="inner">
+        <span class="section-label" style="margin-bottom:16px;display:inline-flex;">Chaleiras Elétricas</span>
+        <h2>Chaleira Luna <span style="display:none;" class="desktop-only">Pro</span></h2>
+        <p>Aquecimento avançado para fervura mais rápida, controle preciso de temperatura e desempenho com eficiência energética.</p>
+        <a class="btn btn-white" href="#" style="display:inline-flex;">
+          Explorar
+          <span class="arrow-right"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- END LUNA -->
+
+  <!-- PRODUCTS CAROUSEL -->
+  <section class="products-section" id="produtos-lista">
+    <div class="container">
+      <div class="badge section-label-light" style="margin-bottom:16px;">Nossos Produtos</div>
+    </div>
+    <h2 class="container" style="font-size:22px;letter-spacing:-0.015em;margin-bottom:24px;">Calor Poderoso,<br/>Preparo Perfeito</h2>
+
+    <div class="products-slider" role="region" aria-label="Carrossel de Produtos">
+
+      <!-- Product 1 -->
+      <a href="#" class="product-card" style="text-decoration:none;">
+        <div class="product-card-header">
+          <div class="product-card-num">1</div>
+          <div class="product-card-actions">
+            <button class="btn btn-ghost btn-sm" aria-label="Comprar Máquina de Café Turco agora">Comprar</button>
+            <button class="btn btn-white btn-sm" aria-label="Ver detalhes da Máquina de Café Turco">Explorar<span class="arrow-right"></span></button>
+          </div>
+        </div>
+        <div class="product-card-img-wrap">
+          <img alt="Máquina de Café Turco" decoding="async" loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0022/1393/7252/files/SAKITURKISHCOFFEE07600_672x672_crop_center.png.webp?v=1760380056&width=336&height=336&crop=center"
+            width="336" height="336"/>
+        </div>
+        <h3 class="product-card-name">Máquina de Café Turco</h3>
+      </a>
+
+      <!-- Product 2 -->
+      <a href="#" class="product-card" style="text-decoration:none;">
+        <div class="product-card-header">
+          <div class="product-card-num">2</div>
+          <div class="product-card-actions">
+            <button class="btn btn-ghost btn-sm" aria-label="Comprar Chaleira de Chá Turco Pro agora">Comprar</button>
+            <button class="btn btn-white btn-sm" aria-label="Ver detalhes da Chaleira de Chá Turco Pro">Explorar<span class="arrow-right"></span></button>
+          </div>
+        </div>
+        <div class="product-card-img-wrap">
+          <img alt="Chaleira de Chá Turco Pro" decoding="async" loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0022/1393/7252/files/Saki_TeaMaker_Black_672x672_crop_center.png.webp?v=1760098434&width=336&height=336&crop=center"
+            width="336" height="336"/>
+        </div>
+        <h3 class="product-card-name">Chaleira de Chá Turco Pro</h3>
+      </a>
+
+      <!-- Product 3 -->
+      <a href="#" class="product-card" style="text-decoration:none;">
+        <div class="product-card-header">
+          <div class="product-card-num">3</div>
+          <div class="product-card-actions">
+            <button class="btn btn-ghost btn-sm">Comprar</button>
+            <button class="btn btn-white btn-sm">Explorar<span class="arrow-right"></span></button>
+          </div>
+        </div>
+        <div class="product-card-img-wrap">
+          <img alt="Chaleira Elétrica Luna Pro" decoding="async" loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0022/1393/7252/files/Saki_Luna_Black_672x672_crop_center.png.webp?v=1760098889&width=336&height=336&crop=center"
+            width="336" height="336"/>
+        </div>
+        <h3 class="product-card-name">Chaleira Elétrica Luna Pro</h3>
+      </a>
+
+      <!-- Product 4 -->
+      <a href="#" class="product-card" style="text-decoration:none;">
+        <div class="product-card-header">
+          <div class="product-card-num">4</div>
+          <div class="product-card-actions">
+            <button class="btn btn-ghost btn-sm">Comprar</button>
+          </div>
+        </div>
+        <div class="product-card-img-wrap">
+          <img alt="Chaleira Baristan Gooseneck" decoding="async" loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0022/1393/7252/products/Untitleddesign_8_672x672_crop_center.png.webp?v=1759230363&width=336&height=336&crop=center"
+            width="336" height="336"/>
+        </div>
+        <h3 class="product-card-name">Chaleira Baristan Gooseneck</h3>
+      </a>
+
+      <!-- Product 5 -->
+      <a href="#" class="product-card" style="text-decoration:none;">
+        <div class="product-card-header">
+          <div class="product-card-num">5</div>
+          <div class="product-card-actions">
+            <button class="btn btn-ghost btn-sm">Comprar</button>
+            <button class="btn btn-white btn-sm">Explorar<span class="arrow-right"></span></button>
+          </div>
+        </div>
+        <div class="product-card-img-wrap">
+          <img alt="Samovar Elétrico" decoding="async" loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0022/1393/7252/files/ElectricSamovar-Black_672x672_crop_center.png.webp?v=1760102404&width=336&height=336&crop=center"
+            width="336" height="336"/>
+        </div>
+        <h3 class="product-card-name">Samovar Elétrico</h3>
+      </a>
+
+      <!-- Product 6 -->
+      <a href="#" class="product-card" style="text-decoration:none;">
+        <div class="product-card-header">
+          <div class="product-card-num">6</div>
+          <div class="product-card-actions">
+            <button class="btn btn-ghost btn-sm">Comprar</button>
+            <button class="btn btn-white btn-sm">Explorar<span class="arrow-right"></span></button>
+          </div>
+        </div>
+        <div class="product-card-img-wrap">
+          <img alt="Café Turco Tradicional" decoding="async" loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0022/1393/7252/files/traditional-coffee_da66007f-51dc-4757-8b76-5f32967d43bc_672x672_crop_center.webp?v=1757577407&width=336&height=336&crop=center"
+            width="336" height="336"/>
+        </div>
+        <h3 class="product-card-name">Café Turco Tradicional</h3>
+      </a>
+
+      <!-- Product 7 -->
+      <a href="#" class="product-card" style="text-decoration:none;">
+        <div class="product-card-header">
+          <div class="product-card-num">7</div>
+          <div class="product-card-actions">
+            <button class="btn btn-ghost btn-sm">Comprar</button>
+            <button class="btn btn-white btn-sm">Explorar<span class="arrow-right"></span></button>
+          </div>
+        </div>
+        <div class="product-card-img-wrap">
+          <img alt="Xícaras de Café Turco Hue" decoding="async" loading="lazy"
+            src="https://cdn.shopify.com/s/files/1/0022/1393/7252/files/SAKI_TURKISH_COFFEE07713_copy_672x672_crop_center.png.webp?v=1760378241&width=336&height=336&crop=center"
+            width="336" height="336"/>
+        </div>
+        <h3 class="product-card-name">Xícaras de Café Turco Hue</h3>
+      </a>
+
+    </div>
+  </section>
+  <!-- END PRODUCTS -->
+
+  <!-- FRESH CLUB -->
+  <section class="fresh-section fade-up" id="fresh-club">
+    <div class="container">
+      <div class="fresh-inner">
+        <div class="fresh-text">
+          <span class="badge section-label-light">Saki Fresh Club</span>
+          <h2>Clube Para<br/>Amantes de Café<br/>Turco <span>❤</span></h2>
+          <p>Torramos toda semana e mandamos mensagem quando está pronto. Responda com quantos pacotes você quer. Embalamos e enviamos imediatamente. Sem aplicativos. Sem assinaturas. Apenas café turco fresco na sua porta.</p>
+          <a class="btn btn-black" href="#" style="margin-top:40px;display:inline-flex;">
+            <span>Explorar</span>
+            <span class="arrow-right"></span>
+          </a>
+        </div>
+        <picture style="display:contents;">
+          <source srcset="https://cdn.sakiproducts.com/images/coffee-club-image.webp" media="(min-width: 1024px)"/>
+          <img src="https://cdn.sakiproducts.com/images/coffee-club-image-small.webp"
+            alt="Celular Saki Fresh Club" decoding="async" loading="lazy"
+            class="fresh-img" width="100%" height="100%"/>
+        </picture>
+      </div>
+
+      <div class="fresh-cards" style="margin-top:32px;">
+        <div class="fresh-card">
+          <div class="fresh-card-icon">🛍️</div>
+          <div>
+            <h3>Pedido Fácil</h3>
+            <p>Peça café em segundos. Torramos semanalmente e enviamos mensagem. Responda com sua sacola. Sem aplicativos. Sem logins.</p>
+          </div>
+        </div>
+        <div class="fresh-card">
+          <div class="fresh-card-icon">🚫</div>
+          <div>
+            <h3>Sem Assinaturas</h3>
+            <p>Sem assinaturas. Sem taxas ocultas. Peça quando quiser. Pague apenas pelo que receber.</p>
+          </div>
+        </div>
+        <div class="fresh-card">
+          <div class="fresh-card-icon">📦</div>
+          <div>
+            <h3>Embalado por Encomenda</h3>
+            <p>Seu café é embalado fresco após o pedido, então chega no seu melhor estado, sempre.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- END FRESH CLUB -->
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-top">
+    <div style="grid-column:1/-1;">
+      <!-- Footer top row: lang/country + socials -->
+      <div class="footer-actions">
+        <button class="footer-selector" style="min-width:200px;">
+          <span>Português</span>
+          <svg width="12" height="8" viewBox="0 0 10 6" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.29864 5.34912C5.13388 5.51387 4.86681 5.51387 4.70205 5.34912L0.400907 1.04796C0.236156 0.883205 0.236156 0.616129 0.400907 0.451373L0.599784 0.252474C0.764535 0.0877173 1.03165 0.0877173 1.19641 0.252474L5.00035 4.05644L8.80431 0.252475C8.96906 0.0877187 9.23614 0.0877188 9.4009 0.252475L9.5998 0.451375C9.76455 0.616131 9.76455 0.883206 9.5998 1.04796L5.29864 5.34912Z" fill="#121212"/></svg>
+        </button>
+        <button class="footer-selector" style="min-width:220px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <img src="https://cdn.sakiproducts.com/images/flags/us.svg" alt="Estados Unidos" width="24" height="18" loading="lazy"/>
+            <span>Brasil</span>
+          </div>
+          <svg width="12" height="8" viewBox="0 0 10 6" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.29864 5.34912C5.13388 5.51387 4.86681 5.51387 4.70205 5.34912L0.400907 1.04796C0.236156 0.883205 0.236156 0.616129 0.400907 0.451373L0.599784 0.252474C0.764535 0.0877173 1.03165 0.0877173 1.19641 0.252474L5.00035 4.05644L8.80431 0.252475C8.96906 0.0877187 9.23614 0.0877188 9.4009 0.252475L9.5998 0.451375C9.76455 0.616131 9.76455 0.883206 9.5998 1.04796L5.29864 5.34912Z" fill="#121212"/></svg>
+        </button>
+      </div>
+
+      <div class="footer-socials" style="margin-top:24px;">
+        <a href="https://www.facebook.com/sakiproduct" target="_blank" rel="noopener noreferrer nofollow" class="social-icon" aria-label="Siga-nos no Facebook" title="Facebook">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/sakiproducts" target="_blank" rel="noopener noreferrer nofollow" class="social-icon" aria-label="Siga-nos no Instagram" title="Instagram">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCRwn2-8UCdUDIR89ij3hK0g" target="_blank" rel="noopener noreferrer nofollow" class="social-icon" aria-label="Siga-nos no YouTube" title="YouTube">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+        </a>
+      </div>
+
+      <!-- Footer links grid -->
+      <div class="footer-links" style="margin-bottom:64px;">
+        <div class="footer-col">
+          <div class="footer-col-title">Empresa</div>
+          <ul>
+            <li><a href="#">Conheça a Saki</a></li>
+            <li><a href="#">Política de Devolução</a></li>
+            <li><a href="#">Política de Envio</a></li>
+            <li><a href="#">Política de Garantia</a></li>
+            <li><a href="#">Tutoriais</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Atacado</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Suporte</div>
+          <ul>
+            <li><a href="#">Perguntas Frequentes</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Acessibilidade</a></li>
+            <li><a href="#">Registro de Garantia</a></li>
+            <li><a href="#">Glossário</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Produtos em Destaque</div>
+          <ul>
+            <li><a href="#">Café Turco</a></li>
+            <li><a href="#">Máquina de Café Turco</a></li>
+            <li><a href="#">Chaleira Elétrica Luna Pro</a></li>
+            <li><a href="#">Chaleira Baristan Gooseneck</a></li>
+            <li><a href="#">Chaleira de Chá</a></li>
+            <li><a href="#">Xícaras de Café Turco</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer image cards -->
+      <div class="footer-cards" style="margin-bottom:64px;">
+        <a href="#" class="footer-card" title="Ver Produtos Saki">
+          <img src="https://cdn.sakiproducts.com/images/footer/footer_frames_products.webp" alt="Ver Produtos Saki" width="400" height="260" loading="lazy"/>
+          <div class="footer-card-label">
+            <span>Produtos</span>
+            <div class="footer-card-arrow">›</div>
+          </div>
+        </a>
+        <a href="#fresh-club" class="footer-card" title="Ver Saki Fresh Club">
+          <img src="https://cdn.sakiproducts.com/images/footer/footer_frames_fresh_club.webp" alt="Ver Saki Fresh Club" width="400" height="260" loading="lazy"/>
+          <div class="footer-card-label">
+            <span>Fresh Club</span>
+            <div class="footer-card-arrow">›</div>
+          </div>
+        </a>
+        <a href="#sobre" class="footer-card" title="Conheça a Saki">
+          <img src="https://cdn.sakiproducts.com/images/footer/footer_frames_meet_saki.webp" alt="Conheça a Saki" width="400" height="260" loading="lazy"/>
+          <div class="footer-card-label">
+            <span>Conheça a Saki</span>
+            <div class="footer-card-arrow">›</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Logo grande -->
+      <div class="footer-logo-wrap" style="margin-bottom:48px;">
+        <img src="https://cdn.sakiproducts.com/images/footer/footer-logo.svg" alt="Saki Logo" width="1200" height="1200" loading="lazy" style="max-height:120px;"/>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container" style="position:relative;padding-bottom:0;">
+    <div class="footer-bottom">
+      <ul class="footer-bottom-links" style="grid-column:1/-1;">
+        <li><a href="#">Política de Privacidade</a></li>
+        <li><a href="#">Termos de Serviço</a></li>
+      </ul>
+      <p class="footer-copyright">2026 Saki. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+<!-- END FOOTER -->
+
+<script>
+  // ---- Fade up on scroll ----
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => obs.observe(el));
+
+  // ---- Tea Slider ----
+  const slides = document.querySelectorAll('.tea-slide');
+  const dots = document.querySelectorAll('.tea-dot');
+  let current = 0;
+
+  function setSlide(idx) {
+    slides[current].classList.remove('active');
+    dots[current].style.background = 'rgba(255,255,255,0.2)';
+    current = idx;
+    slides[current].classList.add('active');
+    dots[current].style.background = 'rgba(255,255,255,0.8)';
+  }
+
+  dots.forEach((dot, i) => dot.addEventListener('click', () => setSlide(i)));
+
+  // Auto-advance slider
+  setInterval(() => setSlide((current + 1) % slides.length), 3500);
+
+  // ---- Header shrink on scroll ----
+  window.addEventListener('scroll', () => {
+    document.querySelector('.header-wrapper').style.background =
+      window.scrollY > 80 ? 'transparent' : 'transparent';
+  });
+
+  // ---- Scroll progress bar ----
+  window.addEventListener('scroll', () => {
+    const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    document.querySelector('.progress-bar').style.width = scrolled + '%';
+  });
+</script>
+
+</body>
+</html>
